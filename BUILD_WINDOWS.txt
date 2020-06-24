@@ -1,0 +1,9 @@
+VS:
+use CMake (cmake-gui) to generate VS solution
+
+CYGWIN:
+install cmake
+cd build
+cmake -G "Unix Makefiles" ..
+make
+make test

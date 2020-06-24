@@ -1,0 +1,12 @@
+*.a
+*.exe
+*.exe~
+*.dylib
+*.so
+*.o
+
+.vscode
+.vscode/*.*
+build/*.*
+bin/Debug/*.*
+bin/Release/*.*
