@@ -29,17 +29,11 @@ X64_EXPORT int CRYPTO_init(void);
 /* free all data initialized in CRYPTO_init */
 X64_EXPORT int CRYPTO_deinit(void);
 
-#define CRYPTO_assert(s) assert((s))
-X64_EXPORT int CRYPTO_alloc_init();
 X64_EXPORT void* CRYPTO_malloc(size_t size);
 X64_EXPORT void* CRYPTO_zalloc(size_t size);
 X64_EXPORT void CRYPTO_free(void *ptr);
 X64_EXPORT void CRYPTO_memzero(void *ptr, size_t size);
 X64_EXPORT void CRYPTO_clear_free(void *ptr, size_t len);
-
-X64_EXPORT void* CRYPTO_secure_malloc(size_t size);
-X64_EXPORT void* CRYPTO_secure_zalloc(size_t size);
-X64_EXPORT void CRYPTO_secure_free(void *ptr);
 
 X64_EXPORT int CRYPTO_crit_enter(void);
 X64_EXPORT int CRYPTO_crit_leave(void);

@@ -40,7 +40,7 @@ X64_EXPORT int secp256k1_get_p(BN_ULONG r[P256_LIMBS]);
 X64_EXPORT int secp256k1_get_order(BN_ULONG r[P256_LIMBS]);
 X64_EXPORT int secp256k1_get_generator(POINT256 *r);
 X64_EXPORT int secp256k1_point_copy(POINT256 *to, const POINT256 *from);
-/* random integer from interval [0, P-1] */
+/* generate random integer from interval [0, P-1] */
 X64_EXPORT int secp256k1_rand(BN_ULONG r[P256_LIMBS]);
 
 /* Functions implemented in assembly */

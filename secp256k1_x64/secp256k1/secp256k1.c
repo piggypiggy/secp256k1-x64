@@ -193,7 +193,6 @@ int secp256k1_point_cmp(const POINT256 *a, const POINT256 *b)
 
 /* ret 1 : point is on curve
  * ret 0 : point is not on curve
- * TODO : implement lehmer exgcd in assembly ?
  */
 int secp256k1_point_is_on_curve(const POINT256 *a)
 {
@@ -259,6 +258,7 @@ static inline BN_ULONG is_zero(BN_ULONG in)
 
 /* in = aR mod p
  * r  = (a^-1)R mod p
+ * TODO : implement lehmer exgcd in assembly ?
  */
 void secp256k1_mod_inverse(BN_ULONG r[P256_LIMBS], const BN_ULONG in[P256_LIMBS])
 {
@@ -478,7 +478,7 @@ int secp256k1_scalar_mul_gen(POINT256 *r, BN_ULONG scalar[P256_LIMBS])
 int secp256k1_scalar_mul_point(POINT256 *r, BN_ULONG scalar[P256_LIMBS], POINT256 *point)
 {
     int i;
-    int ret = 0;
+    int ret = CRYPTO_ERR;
     unsigned int idx;
     unsigned char p_str[33] = { 0 };
     const unsigned int window_size = 5;

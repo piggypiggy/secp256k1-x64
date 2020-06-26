@@ -52,12 +52,21 @@ int fp256_is_zero(const BN_ULONG r[P256_LIMBS])
     return (r[0] | r[1] | r[2] | r[3]) == 0ULL;
 }
 
-/* 0 : a = b
- * otherwise : a != b
+/* 1  : a > b
+ * 0  : a = b
+ * -1 : a < b
  */ 
 int fp256_cmp(const BN_ULONG a[P256_LIMBS], const BN_ULONG b[P256_LIMBS])
 {
-    return ((a[0] ^ b[0]) | (a[1] ^ b[1]) | (a[2] ^ b[2]) | (a[3] ^ b[3]));
+    int i;
+
+    for (i = 3; i >= 0; i--) {
+        if (a[i] > b[i])
+            return 1;
+        if (a[i] < b[i])
+            return -1;
+    }
+    return 0;
 }
 
 /* convert hex string to 256bit number */
