@@ -20,6 +20,8 @@
 #include <secp256k1_x64/fp256.h>
 #include <secp256k1_x64/rand.h>
 
+/* TODO : add bn256 arith, including addition, muliplication, division, etc. */
+
 void fp256_copy(BN_ULONG r[P256_LIMBS], const BN_ULONG a[P256_LIMBS])
 {
     r[0] = a[0];

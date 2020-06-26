@@ -38,9 +38,6 @@ $code.=<<___;
 .text
 .hidden	cpu_info
 
-.LOne:
-.long 1,1,1,1,1,1,1,1
-
 .extern	cpu_info
 ___
 
@@ -51,19 +48,6 @@ my ($t0,$t1,$t2,$t3,$t4,$t5)=("%rax","%rdx","%r14","%r12","%r13","%r15");
 my ($r_ptr,$a_ptr,$b_ptr,$p_ptr)=("%rdi","%rsi","%rdx","%rcx");
 
 $code.=<<___;
-
-# # void fp256_set(uint64_t *res, uint64_t *a);
-# .globl	fp256_set
-# .type	fp256_set,\@function,2
-# .align	32
-# fp256_set:
-#     movdqa	0x00($a_ptr), %xmm0
-#     movdqa	0x10($a_ptr), %xmm1
-#     movdqa	%xmm0, 0x00($r_ptr)
-#     movdqa	%xmm1, 0x10($r_ptr)
-
-#     ret
-# .size	fp256_set,.-fp256_set
 
 # void fp256_div_by_2(uint64_t res[4], uint64_t a[4], uint64_t p[4]);
 .globl	fp256_div_by_2
