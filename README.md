@@ -24,7 +24,7 @@ CMake is used to build this library, see BUILD_UNIX.txt and BUILD_WINDOWS.txt.
 As stated above, I sacrifice security for higher efficiency, ~~so DO NOT use it in serious situation~~ it's suitable for "daily" use.
 
 # Benchmark
-### Intel Core i7-7700k 3.4GHz(Skylake), Ubuntu 18.04 LTS, gcc-7.5.0
+### Intel Core i7-6700 3.4GHz(Skylake), Ubuntu 18.04 LTS, gcc-7.5.0
 arithmetic              |      cycles / op      |      op / s      |
 ------------------------|-----------------------|------------------|
 montgomery square       |            43         |    78125000      |
